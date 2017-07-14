@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Watson_Speaks" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +21,111 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="ElU-FJ-9SQ">
+                                <rect key="frame" x="0.0" y="15" width="375" height="632"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="13" translatesAutoresizingMaskIntoConstraints="NO" id="86R-9T-cAv">
+                                        <rect key="frame" x="88.5" y="0.0" width="198" height="50"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Watson" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="acX-Td-EtI">
+                                                <rect key="frame" x="0.0" y="8.5" width="94" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <color key="textColor" red="0.5725490196078431" green="0.81568627450980391" blue="0.31372549019607843" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speaks" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m1Q-pv-5qG">
+                                                <rect key="frame" x="107" y="8.5" width="91" height="33.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                <color key="textColor" red="0.12941176470588234" green="0.69019607843137254" blue="0.89411764705882346" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="7DR-hH-fiK"/>
+                                        </constraints>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBn-dg-E9H">
+                                        <rect key="frame" x="37.5" y="70" width="300" height="188.5"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="EGo-mz-wxi">
+                                        <rect key="frame" x="47" y="278.5" width="281" height="26"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="ekm-nP-mKo"/>
+                                        </constraints>
+                                        <segments>
+                                            <segment title="Spanish"/>
+                                            <segment title="French"/>
+                                            <segment title="Italian"/>
+                                            <segment title="Arabic"/>
+                                        </segments>
+                                        <connections>
+                                            <action selector="updateTranslation:" destination="BYZ-38-t0r" eventType="valueChanged" id="yuN-E7-RQM"/>
+                                        </connections>
+                                    </segmentedControl>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1ce-aO-LKY">
+                                        <rect key="frame" x="37.5" y="323.5" width="300" height="188.5"/>
+                                        <color key="backgroundColor" red="0.28627450980000002" green="0.56470588239999997" blue="0.8862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                                <integer key="value" value="10"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="anp-mm-7QK">
+                                        <rect key="frame" x="137.5" y="532" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="EK4-tq-IpU"/>
+                                            <constraint firstAttribute="height" constant="100" id="RW5-TL-bP4"/>
+                                        </constraints>
+                                        <state key="normal" title="Button" image="iTunesArtwork"/>
+                                        <connections>
+                                            <action selector="startstopRecording:" destination="BYZ-38-t0r" eventType="touchUpInside" id="J2h-co-zim"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="1ce-aO-LKY" firstAttribute="width" secondItem="ElU-FJ-9SQ" secondAttribute="width" multiplier="4/5" id="A1S-B1-LQe"/>
+                                    <constraint firstItem="EGo-mz-wxi" firstAttribute="width" secondItem="ElU-FJ-9SQ" secondAttribute="width" multiplier="3/4" id="Eed-NM-Azq"/>
+                                    <constraint firstItem="HBn-dg-E9H" firstAttribute="width" secondItem="ElU-FJ-9SQ" secondAttribute="width" multiplier="4/5" id="WrG-Q4-jTd"/>
+                                    <constraint firstItem="1ce-aO-LKY" firstAttribute="height" secondItem="HBn-dg-E9H" secondAttribute="height" id="xq2-3I-ItU"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="ElU-FJ-9SQ" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="15" id="SKk-Vp-hFe"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="ElU-FJ-9SQ" secondAttribute="bottom" constant="20" id="cbN-mC-N6l"/>
+                            <constraint firstAttribute="trailing" secondItem="ElU-FJ-9SQ" secondAttribute="trailing" id="maP-Zu-38q"/>
+                            <constraint firstItem="ElU-FJ-9SQ" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rF2-fR-CSy"/>
+                        </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <connections>
+                        <outlet property="originalTextView" destination="HBn-dg-E9H" id="Bcr-tw-Srr"/>
+                        <outlet property="segmentedControl" destination="EGo-mz-wxi" id="CkP-6t-XyE"/>
+                        <outlet property="transcribedLabel" destination="1ce-aO-LKY" id="kAO-FM-5i4"/>
+                        <outlet property="watsonButton" destination="anp-mm-7QK" id="J2y-tX-2Y0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-514" y="175"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="iTunesArtwork" width="626" height="626"/>
+    </resources>
 </document>
